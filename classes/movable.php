@@ -13,6 +13,14 @@ class Movable
 		\Session::delete(static::generate_key());
 	}
 
+	public static function set($data)
+	{
+		foreach ($data as $key => $value)
+		{
+			$_POST[$key] = $value;
+		}
+	}
+
 	public static function post($next = null, $prev_array = array())
 	{
 		static::check_prev($prev_array);
